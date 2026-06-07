@@ -19,7 +19,7 @@ export async function requireSession(): Promise<SessionPayload> {
 // التحقق من بيانات الدخول مقابل متغيرات البيئة
 export function checkCredentials(username: string, password: string): boolean {
   const expectedUser = process.env.ADMIN_USERNAME ?? 'admin';
-  const expectedPass = process.env.ADMIN_PASSWORD ?? 'admin';
+  const expectedPass = process.env.ADMIN_PASSWORD ?? '';
 
   if (!expectedPass) return false;
 
